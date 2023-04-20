@@ -1,19 +1,23 @@
-import React, {useState, createContext} from 'react'
+import React, { useState, createContext } from 'react'
+import DisplayUsers from './component/DisplayUsers';
+import { useEffect } from 'react';
 
-const usersContext = createContext()
+export const usersContext = createContext()
 function App() {
+  
+
   const [userState, setUserState] = useState({
     Bob: true,
     Gary: true,
-    Jessica: true,
+    Jessica: false,
     Sam: true,
     Eric: true,
   });
 
   return (
     <div className="App">
-      <usersContext.Provider value={{state:userState, setUsers:setUserState}}>
-
+      <usersContext.Provider value={{ state: userState, setUsers: setUserState }}>
+        <DisplayUsers />
       </usersContext.Provider>
     </div>
   );

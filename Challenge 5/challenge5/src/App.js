@@ -9,7 +9,7 @@ function App() {
   const [userState, setUserState] = useState({
     Bob: true,
     Gary: true,
-    Jessica: false,
+    Jessica: true,
     Sam: true,
     Eric: true,
   });

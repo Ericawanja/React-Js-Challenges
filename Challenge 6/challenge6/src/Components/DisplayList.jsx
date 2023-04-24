@@ -24,16 +24,27 @@ function DisplayList() {
 
                     return <div>
                         <h3>{item}</h3>
-                        <h4>Subtasks</h4>
+                      
                         <div className='subtasks'>
                             {list[item].map(obj => {
                                 let subtask = Object.keys(obj)[0]
                                 console.log()
                                 {
-                                    return obj[subtask] ? (<div>
-                                        <h4>Completed</h4>
-                                        <p>{subtask}</p>
-                                    </div>) : <div> <h4>Uncompleted</h4><p>{subtask}</p></div>
+                                    return (
+                                        <div className='flex'>
+                                            <div>
+                                            <h4>Completed</h4> 
+                                            {obj[subtask] && subtask}</div>
+                                            <div><h4>Uncompleted</h4>
+                                             { !obj[subtask] && subtask}</div>
+
+                                        </div>
+                                    )
+
+                                    //   ? (<div>
+                                    //     
+                                    //     <p>{subtask}</p>
+                                    // </div>) : <div> <h4>Uncompleted</h4><p>{subtask}</p></div>
                                 }
 
                             })}
